@@ -1,0 +1,46 @@
+@import "frappe.css";
+
+* {
+  font-size: 10px;
+  min-height: 0;
+  margin: 0;
+}
+
+#waybar {
+  background: transparent;
+}
+
+#mode,
+#mpd,
+#clock,
+#network,
+#backlight,
+#battery {
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  background-color: @surface0;
+  border-radius: 8px;
+  color: @text;
+}
+
+.text-button {
+  color: @text;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.focused {
+  color: @surface0;
+  background-color: @blue;
+}
+
+#mode {
+  color: @surface0;
+  background: @lavender;
+  margin-left: 4px;
+}

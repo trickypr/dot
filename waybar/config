@@ -1,0 +1,55 @@
+{
+	"layer": "top",
+	"modules-left": [
+		"sway/workspaces",
+		"sway/mode"
+	],
+	"modules-center": [
+		"mpd",
+		"clock"
+	],
+	"modules-right": [
+		"network",
+		"bluetooth",
+		"backlight",
+		"battery"
+	],
+	"battery": {
+		"format": "{capacity}% {icon}",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{percent}% {icon}",
+		"format-icons": [
+			"",
+			""
+		]
+	},
+	"bluetooth": {
+		"format": " {status}",
+		"format-disabled": " Disabled",
+		"format-connected": " {num_connections} connected",
+		"tooltip-format": "{controller_alias}\t{controller_address}",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+	},
+	"network": {
+		"interface": "wlp166s0",
+		"format": "{ifname}",
+		"format-wifi": "{essid} ({signalStrength}%) ",
+		"format-ethernet": "{ipaddr}/{cidr} ",
+		"format-disconnected": "",
+		"tooltip-format": "{ifname} via {gwaddr} ",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		"tooltip-format-ethernet": "{ifname} ",
+		"tooltip-format-disconnected": "Disconnected",
+		"max-length": 50
+	}
+}
