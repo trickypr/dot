@@ -1,0 +1,35 @@
+font=pango:monospace
+
+color=#303446
+
+# This is the colors of the outer ring that everything sits on
+ring-color=#414559
+ring-clear-color=#414559
+ring-caps-lock-color=#414559
+ring-ver-color=#414559
+ring-wrong-color=#414559
+
+separator-color=#414559
+
+line-color=#414559
+line-clear-color=#414559
+line-caps-lock-color=#414559
+line-ver-color=#414559
+line-wrong-color=#414559
+
+inside-color=#414559
+inside-clear-color=#414559
+inside-caps-lock-color=#414559
+inside-ver-color=#414559
+inside-wrong-color=#414559
+
+text-color=#c6d0f5
+text-clear-color=#babbf1
+text-caps-lock-color=#e5c890
+text-ver-color=#81c8be
+text-wrong-color=#e78284
+
+# Segment colors
+bs-hl-color=#e78284
+key-hl-color=#a6d189
+
