@@ -41,6 +41,7 @@ function root_file {
 # Dot files
 
 root_file "Font config" "$dot_dir/fonts_local.conf" "/etc/fonts/local.conf"
+root_file "Background Image" "$dot_dir/romb.png" "/usr/share/backgrounds/romb.png"
 
 folder Neovim "$dot_dir/nvim" "$HOME/.config/nvim"
 folder Alacritty "$dot_dir/alacritty" "$HOME/.config/alacritty"

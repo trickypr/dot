@@ -100,7 +100,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["neo-tree.nvim"] = {
-    config = { "\27LJ\2\na\0\0\3\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\19Neotree reveal\bcmd\bvim\nsetup\rneo-tree\frequire\0" },
+    config = { "\27LJ\2\nq\0\0\3\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0#nnoremap \\ :Neotree reveal<cr>\bcmd\bvim\nsetup\rneo-tree\frequire\0" },
     loaded = true,
     path = "/home/trickypr/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
@@ -160,7 +160,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: neo-tree.nvim
 time([[Config for neo-tree.nvim]], true)
-try_loadstring("\27LJ\2\na\0\0\3\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\19Neotree reveal\bcmd\bvim\nsetup\rneo-tree\frequire\0", "config", "neo-tree.nvim")
+try_loadstring("\27LJ\2\nq\0\0\3\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0#nnoremap \\ :Neotree reveal<cr>\bcmd\bvim\nsetup\rneo-tree\frequire\0", "config", "neo-tree.nvim")
 time([[Config for neo-tree.nvim]], false)
 
 _G._packer.inside_compile = false

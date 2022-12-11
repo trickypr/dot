@@ -18,3 +18,7 @@ cargo install neovide
 	sudo mv FiraCode /usr/share/fonts
 )
 
+# This is required by nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
