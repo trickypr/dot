@@ -7,3 +7,5 @@
 [user]
 	email = "23250792+trickypr@users.noreply.github.com"
 	name = TrickyPR
+[core]
+	editor = nvim
