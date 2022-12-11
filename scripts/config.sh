@@ -4,11 +4,13 @@
 echo "fastestmirror=1" | sudo tee -a /etc/dnf/dnf.conf
 sudo dnf clean all
 
-./files.sh
+./install.sh
 
 sudo systemctl disable lightdm
 sudo systemctl enable sddm
 
 sudo dnf remove lightdm i3
 
-./install.sh
+./files.sh
+
+
