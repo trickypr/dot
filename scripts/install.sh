@@ -1,6 +1,6 @@
 # This expects the fedora i3 image as a base
 
-sudo dnf install alacritty dex-autostart gh git grimshot lua sddm sway waybar xarchiver yarnpkg nodejs neovim firefox
+sudo dnf install alacritty dex-autostart gh git grimshot lua sddm sway waybar xarchiver yarnpkg nodejs neovim firefox fuzzel
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -13,7 +13,9 @@ cargo install neovide
 	cd nerd_font
 
 	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip
-	unzip FiraCode.zip
+	
+	mkdir FiraCode
+	unzip FiraCode.zip -d FiraCode
 
 	sudo mv FiraCode /usr/share/fonts
 )
