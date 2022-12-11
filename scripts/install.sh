@@ -1,6 +1,6 @@
 # This expects the fedora i3 image as a base
 
-sudo dnf alacritty dex-autostart gh git grimshot mpd lua sddm sway waybar xarchiver yarnpkg nodejs neovim firefox
+sudo dnf install alacritty dex-autostart gh git grimshot mpd lua sddm sway waybar xarchiver yarnpkg nodejs neovim firefox
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
