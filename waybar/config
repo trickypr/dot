@@ -5,7 +5,6 @@
 		"sway/mode"
 	],
 	"modules-center": [
-		"mpd",
 		"clock"
 	],
 	"modules-right": [

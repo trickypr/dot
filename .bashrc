@@ -30,4 +30,7 @@ alias v=nvim
 alias vim=nvim
 alias size="stat -c%s"
 
+# Enable appindicators
+export XDG_CURRENT_DESKTOP=Unity
+
 . "$HOME/.cargo/env"
