@@ -26,8 +26,8 @@ fi
 
 unset rc
 
-alias v=nvim
-alias vim=nvim
+alias v=neovide
+alias vim=neovide
 alias size="stat -c%s"
 
 # Enable appindicators
