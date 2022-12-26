@@ -29,8 +29,14 @@ unset rc
 alias v=neovide
 alias vim=neovide
 alias size="stat -c%s"
+alias c="code --enable-features=UseOzonePlatform --ozone-platform=wayland ."
 
 # Enable appindicators
 export XDG_CURRENT_DESKTOP=Unity
 
 . "$HOME/.cargo/env"
+
+# pnpm
+export PNPM_HOME="/home/trickypr/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

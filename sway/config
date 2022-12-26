@@ -77,7 +77,7 @@ bindsym $mod+Print exec --no-startup-id grimshot copy window
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
