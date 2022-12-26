@@ -70,6 +70,6 @@ folder Fuzzel "$dot_dir/fuzzel" "$HOME/.config/fuzzel"
 folder Sway "$dot_dir/sway" "$HOME/.config/i3" 
 folder "Sway Lock" "$dot_dir/swaylock" "$HOME/.config/swaylock"
 folder Waybar "$dot_dir/waybar" "$HOME/.config/waybar"
-folder Waybar "$dot_dir/kitty" "$HOME/.config/kitty"
+folder Kitty "$dot_dir/kitty" "$HOME/.config/kitty"
 
 
