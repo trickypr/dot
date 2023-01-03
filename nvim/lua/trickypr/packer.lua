@@ -19,13 +19,22 @@ return require('packer').startup(function(use)
 	use "folke/which-key.nvim"
 
 	-- LSP stuff
-	use "williamboman/mason.nvim" 
+	use "williamboman/mason.nvim"
 	use "williamboman/mason-lspconfig.nvim"
 	use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
 	use 'jose-elias-alvarez/null-ls.nvim' -- Null ls is used for code formatting and pylint analysis
 	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
 	use 'hrsh7th/cmp-nvim-lsp' -- Autocompletion with LSPs
 	use 'jay-babu/mason-null-ls.nvim'
+
+	-- Syntax highlighting
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = function()
+			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+			ts_update()
+		end,
+	}
 
 	-- File tree :)
 	use {

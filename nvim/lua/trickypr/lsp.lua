@@ -12,7 +12,7 @@ require("mason").setup({
 
 require("mason-lspconfig").setup({
 	-- List of servers to automatically install
-	ensure_installed = { 'pyright', 'tsserver', 'eslint', 'bashls', 'cssls', 'html', 'sumneko_lua', 'jsonls', 'clangd', 'lemminx', 'rust_analyzer', 'tailwindcss' },
+	ensure_installed = { 'pyright', 'tsserver', 'eslint', 'bashls', 'cssls', 'html', 'sumneko_lua', 'jsonls', 'clangd', 'lemminx', 'rust_analyzer', 'tailwindcss', 'prismals' },
 	-- automatically detect which servers to install (based on which servers are set up via lspconfig)
 	automatic_installation = true,
 })
@@ -22,6 +22,15 @@ local lspconfig = require 'lspconfig'
 require("mason-null-ls").setup({
 	ensure_installed = { 'codespell' }
 })
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = true,
+    virtual_text = true,
+    signs = true,
+    update_in_insert = false,
+  }
+)
 
 -- Common LSP On Attach function
 local get_on_attach = function (server_name)
@@ -44,6 +53,8 @@ local get_on_attach = function (server_name)
 		vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 		vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 		vim.keymap.set('n', '<leader>so', require('telescope.builtin').lsp_document_symbols, opts)
+		vim.keymap.set("n", "gn", vim.diagnostic.goto_next, opts)
+		vim.keymap.set("n", "gp", vim.diagnostic.goto_prev, opts)
 	end
 
 	return on_attach
@@ -54,7 +65,10 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- LSPs with default setup: bashls (Bash), cssls (CSS), html (HTML), clangd (C/C++), jsonls (JSON)
-for _, lsp in ipairs { 'bashls', 'cssls', 'html', 'clangd', 'jsonls', 'sumneko_lua', 'rust_analyzer', 'tailwindcss', 'tsserver' } do
+for _, lsp in ipairs { 
+	'bashls', 'cssls', 'html', 'clangd', 'jsonls', 'sumneko_lua',
+	'rust_analyzer', 'tailwindcss', 'tsserver', 'prismals'
+} do
 	lspconfig[lsp].setup {
 		on_attach = get_on_attach(lsp),
 		capabilities = capabilities,
