@@ -1,4 +1,2 @@
-require("trickypr.set")
-require("trickypr.remap")
-require("trickypr.lsp")
-require("trickypr.tree-sitter")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")

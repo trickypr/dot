@@ -32,11 +32,16 @@ alias size="stat -c%s"
 alias c="code --enable-features=UseOzonePlatform --ozone-platform=wayland ."
 
 # Enable appindicators
-export XDG_CURRENT_DESKTOP=Unity
+export XDG_CURRENT_DESKTOP=sway
 
 . "$HOME/.cargo/env"
 
 # pnpm
 export PNPM_HOME="/home/trickypr/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 # pnpm end
+
+[ -f "/home/trickypr/.ghcup/env" ] && source "/home/trickypr/.ghcup/env" # ghcup-env

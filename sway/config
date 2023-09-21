@@ -20,11 +20,11 @@ output "*" bg /usr/share/backgrounds/romb.png fill
 
 # Monitor setup
 output eDP-1 pos 904 1440 scale 1.5
-output DP-1 pos 0,0 scale 1.5 adaptive_sync on
-output DP-2 pos 0,0 scale 1.5 adaptive_sync on
-output DP-3 pos 2560 -600 transform 270 scale 1.5 
-output DP-7 pos 2560 -600 transform 270 scale 1.5 
-output DP-6 pos 2560 -600 transform 270 scale 1.5 
+output DP-1 pos 0,0 scale 1 adaptive_sync on
+output DP-2 pos 0,0 scale 1 adaptive_sync on
+output DP-3 pos 3840 -600 transform 270 scale 1.5 
+output DP-7 pos 3840 -600 transform 270 scale 1.5 
+output DP-6 pos 3840 -600 transform 270 scale 1.5 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -37,12 +37,20 @@ exec --no-startup-id waybar
 exec --no-startup-id blueman-applet
 exec --no-startup-id dunst
 
+exec /usr/libexec/xdg-desktop-portal-gtk -r
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
+exec swayidle -w \
+	timeout 600 'swaylock -f' \
+	timeout 605 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"'
+
+# X11 stuff that I don't use:
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- swaylock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- swaylock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
