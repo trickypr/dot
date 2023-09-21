@@ -1,5 +1,10 @@
 # .bashrc
 
+# Session
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=sway
+export XDG_CURRENT_DESKTOP=sway
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -30,13 +35,25 @@ alias v=neovide
 alias vim=neovide
 alias size="stat -c%s"
 alias c="code --enable-features=UseOzonePlatform --ozone-platform=wayland ."
+alias comp1130-init="/home/trickypr/scripts/comp1130-init.sh"
+alias gimmie="sudo dnf install"
+
+export PATH="/home/trickypr/scripts/firefox-nightly:$PATH"
 
 # Enable appindicators
-export XDG_CURRENT_DESKTOP=Unity
+# export XDG_CURRENT_DESKTOP=Unity
 
 . "$HOME/.cargo/env"
 
 # pnpm
 export PNPM_HOME="/home/trickypr/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 # pnpm end
+
+[ -f "/home/trickypr/.ghcup/env" ] && source "/home/trickypr/.ghcup/env" # ghcup-env
+
+
+export PATH="$PATH:/app/lib/010editor" #ADDED BY 010 EDITOR

@@ -19,12 +19,14 @@ gaps inner 8
 output "*" bg /usr/share/backgrounds/romb.png fill
 
 # Monitor setup
-output eDP-1 pos 904 1440 scale 1.5
-output DP-1 pos 0,0 scale 1.5 adaptive_sync on
-output DP-2 pos 0,0 scale 1.5 adaptive_sync on
-output DP-3 pos 2560 -600 transform 270 scale 1.5 
-output DP-7 pos 2560 -600 transform 270 scale 1.5 
-output DP-6 pos 2560 -600 transform 270 scale 1.5 
+output eDP-1 pos 904 2160 scale 1
+output DP-1 pos 0,0 scale 1 adaptive_sync on
+output DP-2 pos 0,0 scale 1 adaptive_sync on
+output DP-3 pos 0,0 scale 1 adaptive_sync on
+output DP-4 pos 0,0 scale 1 adaptive_sync on
+output DP-7 pos 3840 -600 transform 270 scale 1 
+output DP-6 pos 3840 -600 transform 270 scale 1 
+output DP-5 pos 3840 -600 transform 270 scale 1 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -35,7 +37,19 @@ output DP-6 pos 2560 -600 transform 270 scale 1.5
 exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id waybar
 exec --no-startup-id blueman-applet
-exec --no-startup-id dunst
+exec --no-startup-id swaync
+bindsym $mod+N exec --no-startup-id swaync-client -t
+# Start a polkit agent so we can do helpful stuff
+# exec --no-startup-id lxpolkit
+exec /usr/libexec/polkit-gnome-authentication-agent-1
+# exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets
+exec dbus-update-activation-environment --all
+exec gnome-keyring-daemon --start --components=secrets
+
+# Enable desktop portals to force a number of applications to work
+exec /usr/libexec/xdg-desktop-portal-gtk -r
+exec /usr/libexec/xdg-desktop-portal-wlr -r
+# exec --no-startup-id /usr/lib/pam_kwallet_init
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -72,6 +86,8 @@ bindsym Shift+Print exec --no-startup-id grimshot save
 #
 # Copy a selected window
 bindsym $mod+Print exec --no-startup-id grimshot copy window
+
+bindsym $mod+Shift+Print exec --no-startup-id grimshot save window
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -220,4 +236,9 @@ client.urgent           #85c1dc #85c1dc #303446 #85c1dc   #DB3279
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #FFFFFF
+
+input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
+	natural_scroll enabled
+	scroll_factor 0.2
+}
 
