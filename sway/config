@@ -112,6 +112,7 @@ bindsym $mod+Shift+q kill
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec --no-startup-id "fuzzel"
+bindsym $mod+m exec --no-startup-id "/home/trickypr/Source/hyprmag/result/bin/hyprmag"
 
 # change focus
 bindsym $mod+h focus left
