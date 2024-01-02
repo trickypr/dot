@@ -54,3 +54,4 @@ esac
 [ -f "/home/trickypr/.ghcup/env" ] && source "/home/trickypr/.ghcup/env" # ghcup-env
 
 export PATH="$PATH:/app/lib/010editor" #ADDED BY 010 EDITOR
+export _JAVA_AWT_WM_NONREPARENTING=1
