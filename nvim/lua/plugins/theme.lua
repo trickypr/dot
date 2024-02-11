@@ -5,4 +5,5 @@ return {
       colorscheme = "catppuccin-frappe",
     },
   },
+  { "nkrkv/nvim-treesitter-rescript" },
 }
