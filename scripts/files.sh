@@ -63,6 +63,7 @@ file "ZSH config" "$dot_dir/.zshrc" "$HOME/.zshrc"
 
 folder Alacritty "$dot_dir/alacritty" "$HOME/.config/alacritty"
 folder Fuzzel "$dot_dir/fuzzel" "$HOME/.config/fuzzel"
+folder Kanshi "$dot_dir/kanshi" "$HOME/.config/kanshi"
 folder Kitty "$dot_dir/kitty" "$HOME/.config/kitty"
 folder Neovim "$dot_dir/nvim" "$HOME/.config/nvim"
 folder Sheldon "$dot_dir/sheldon" "$HOME/.config/sheldon"

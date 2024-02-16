@@ -1,0 +1,12 @@
+profile "Laptop Floating" {
+  output eDP-1 enable
+}
+
+profile "Laptop Docked" {
+  output eDP-1 disable position 904,2160 scale 1
+  output DP-3 position 0,0 transform normal scale 1
+  output DP-5 position 3840,-1080 transform 90 scale 1
+
+  exec swaymsg workspace 1, move workspace to output DP-3
+}
+
